@@ -31,7 +31,6 @@ public class EmploeeServlet extends HttpServlet {
 		out.print("<h1>"+name+" </h1> <br>");
 		out.print("<h1>"+salary+" </h1>");
 		
-		
 	}
 
 }
