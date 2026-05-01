@@ -20,6 +20,8 @@ public class StudentAddServlet extends HttpServlet {
     public StudentAddServlet() {
         super();
     }
+    
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 			response.setContentType("text/html");
