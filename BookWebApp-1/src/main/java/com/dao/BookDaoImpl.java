@@ -28,7 +28,7 @@ public class BookDaoImpl implements BookDao {
 
 		} catch (Exception e) {
 			// throw e;
-			throw new BookDAOException("Add Book " + book);
+			throw new BookDAOException("Error adding book" + e);
 		}
 
 		return rows;
@@ -37,7 +37,7 @@ public class BookDaoImpl implements BookDao {
 	@Override
 	public int updateBook(Book book) {
 		int rows = 0;
-		String sql = "update book set title=? , author=? price=? , qty=? where id=?";
+		String sql = "update books set title=?, author=?, price=?, qty=? where id=?";
 		try (Connection con = DBUtility.getDBUtility().getDBConnection();
 				PreparedStatement ps = con.prepareStatement(sql)) {
 			ps.setString(1, book.getTitle());
@@ -49,7 +49,7 @@ public class BookDaoImpl implements BookDao {
 
 		} catch (Exception e) {
 			// throw e;
-			throw new BookDAOException("Update Book " + book);
+			throw new BookDAOException("Error Updating  Book " + book);
 		}
 
 		return rows;
@@ -66,7 +66,7 @@ public class BookDaoImpl implements BookDao {
 
 		} catch (Exception e) {
 			// throw e;
-			throw new BookDAOException("DELETE  Book WITH ID  " + id);
+			throw new BookDAOException("Error DELETING  Book WITH ID  " + id);
 		}
 
 		return rows;
@@ -80,8 +80,9 @@ public class BookDaoImpl implements BookDao {
 				PreparedStatement ps = con.prepareStatement(sql)) {
 			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
-			book = new Book();
+
 			while (rs.next()) {
+				book = new Book();
 				book.setId(rs.getInt("id"));
 				book.setTitle(rs.getString("title"));
 				book.setAuthor(rs.getString("author"));
@@ -92,7 +93,7 @@ public class BookDaoImpl implements BookDao {
 
 		} catch (Exception e) {
 			// throw e;
-			throw new BookDAOException("find Book With" + id);
+			throw new BookDAOException("Error finding  Book With" + id);
 		}
 
 		return book;
@@ -118,7 +119,7 @@ public class BookDaoImpl implements BookDao {
 
 		} catch (Exception e) {
 			// throw e;
-			throw new BookDAOException("Read All Book ");
+			throw new BookDAOException("Error Reading  All Book ");
 		}
 
 		return list;

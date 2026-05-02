@@ -56,7 +56,7 @@ public class ReadBookServlet extends HttpServlet {
 			out.print("<a href='deleteBook?id="+book.getId()+"'>"+" DELETE "+"</a>");
 			out.print("</td>");
 			out.print("<td>");
-			out.print("<a href='deleteBook?id="+book.getId()+"'>"+" UPDATE "+"</a>");
+			out.print("<a href='updateFormBookServlet?id="+book.getId()+"'>"+" UPDATE "+"</a>");
 			out.print("</td>");
 			out.print("</tr>");
 		}
