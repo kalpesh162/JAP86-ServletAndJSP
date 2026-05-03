@@ -37,4 +37,8 @@
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSessionIdListener"/>
     <fullyQualifiedTypeName name="javax.websocket.Session"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="java.lang.Boolean"/>
+    <fullyQualifiedTypeName name="com.model.Book"/>
+    <fullyQualifiedTypeName name="com.dao.BookDao"/>
+    <fullyQualifiedTypeName name="com.dao.BookDaoImpl"/>
 </qualifiedTypeNameHistroy>
